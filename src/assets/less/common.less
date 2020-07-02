@@ -1,0 +1,198 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #5d4b4b;
+}
+li{
+    list-style: none;
+}
+
+
+.fr{
+    float: right;
+}
+.fl{
+    float: left;
+}
+.clearfix{
+    clear: both;
+}
+
+#tpheader{
+    a{
+        text-decoration: node;
+        color: #fff;
+    }
+    @color: #fff;
+    .lh(@width,@height,@lheight:@height){
+        width: @width*1px;
+        height: @height*1px;
+        line-height: @lheight*1px;
+        overflow: hidden;
+        color: #fff;
+        overflow: hidden;
+        margin-top: 15px;
+        background: #7c40cc;
+        vertical-align: 20px;
+    }
+    & .messagebox{
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        height: 30px;
+        width: 50px;
+        font-size: 20px;
+        vertical-align: 45px;
+        & .number{
+            font-size: 8px;
+            position: absolute;
+            top: 0;
+            left:30px;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            border-radius: 50%;
+            background: #ff2d52;
+            color: #fff;
+        }
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background: #93cbf9;
+    z-index: 999;
+    padding:0 20px;
+    & .getTime{
+        .lh(200,45);
+        display: inline-block;
+        border-right: 1px solid #fff;
+        text-align: center;
+        & span{
+            padding: 0 5px;
+            font-size: 18px;
+        }
+    }
+    & .sectionbox{
+        display: inline-block;
+        .lh(100,45,22);
+        font-size: 14px;
+        text-align: center;
+    }
+    & .iconx{
+        display: inline-block;
+        .lh(25,45);
+        text-align: center;
+        font-size: 16px;
+        & .items{
+            color: #000;
+            padding: 5px 10px;
+            & a{
+                font-size: 14px;
+                color: #000;
+                margin-left: 10px;
+                vertical-align: middle;
+            }
+            & .item{
+                padding: 0 auto;
+            }
+            & .item:hover{
+                border-radius: 3px;
+                background: rgb(241, 214, 92);
+            }
+        }
+    }
+    & .linkto{
+        display: inline-block;
+        position: relative;
+        & .context{
+            width: 160px;
+            background:rgba(255, 251, 251, 0.6);
+            position: absolute;
+            bottom: -137px;
+            right: 0;
+            display: none;
+        }
+        & .zic{
+            position: absolute;
+            bottom: 12px;
+            right: 6px;
+            border: 8px solid transparent;
+            border-bottom-color:rgba(255, 251, 251, 0.6);
+            display: none;
+        }
+    }
+    & .linkto:hover .sectionbox,& .linkto:hover .iconx,& .linkto:hover .getTime{
+        background: rgba(0,0,0,.6);
+    }
+    & .imgbg{
+        z-index: 999;
+        width: 480px;
+        height: 60px;
+        background-image: url('../images/logo.jpg');
+        background-size: 480px;
+        background-position: 0 -6px;
+    }
+}
+
+#btLeft{
+    position: fixed;
+    top: 75px;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 999;
+    background: paleturquoise;
+    & .options{
+        & .router-link-exact-active.router-link-active{
+            & .option{
+                background:rgb(167, 150, 150);
+                color: #fff;
+            }
+        }
+    }
+    & .option{
+        height: 40px;
+        line-height: 40px;
+        padding: 0 15px;
+    }
+    
+}
+#btRight{
+    padding-top: 75px;
+    padding-left: 200px;
+    & .btngroup{
+        padding: 20px 20px;
+    }
+}
+
+#imgbox{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    & img{
+        max-width: 80px;
+        height: 100%;
+    }
+}
+#login-box{
+    margin: 10% auto;
+    width: 450px;
+    height: 200px;
+}
+#bgx{
+    background-color: #f5f8e1;
+}
+#regist-box{
+    width: 450px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
