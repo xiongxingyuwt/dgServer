@@ -60,8 +60,8 @@ function madminlogin(options){
     return new Promise((resolve, reject)=>{
         query({
             sql: "select adminPhone,adminpwd from admin_tab where adminPhone = ?",
-            data: options.data
-            ,type: 'get'
+            data: options.data,
+            type: 'get'
         }).then((result)=>{
             resolve(result)
         }).catch((err)=>{
