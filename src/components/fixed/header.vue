@@ -62,8 +62,11 @@
                 :model="sizeForm" 
                 label-width="80px" 
                 size="mini"
-            >
-                <el-form-item label="账号(手机号)" prop="adminPhone">
+            >   
+                <el-form-item label="管理员头像">
+                   <img :src="sizeForm.adminPhoto" alt="" width="300px">
+                </el-form-item>
+                <el-form-item label="账号(手机号)">
                    <el-input v-model='sizeForm.adminPhone' placeholder="请输入管理员手机号"></el-input>
                 </el-form-item>
                 <el-form-item label="姓名">
@@ -94,7 +97,7 @@
 </template>
 
 <script>
-import { getlogin } from 'ax/dataaxios/dealadmin'
+import { getlogin,getloginif } from 'ax/dataaxios/dealadmin'
 export default {
     data(){
         return {
@@ -161,13 +164,18 @@ export default {
             this.mysdialogVisible = false
         },
         myself(){
-            this.mysdialogVisible = true
-            this.adminname = this.$store.state.adlist.adminname
-            this.adminPhoto = this.$store.state.adlist.adminPhoto
-            this.adminPhone = this.$store.state.adlist.adminPhone
-            this.adminEmail = this.$store.state.adlist.adminEmail
-            this.adminSex = this.$store.state.adlist.adminSex
-            this.adminGrade = this.$store.state.adlist.adminGrade
+            getloginif(this.iphx).then((datas)=>{
+                if(datas.status === 0){
+                    console.log(datas.data[0].adminname)
+                    this.sizeForm.adminname = datas.data[0].adminname
+                    this.sizeForm.adminPhoto = datas.data[0].adminPhoto
+                    this.sizeForm.adminPhone = datas.data[0].adminPhone
+                    this.sizeForm.adminEmail = datas.data[0].adminEmail
+                    this.sizeForm.adminSex = datas.data[0].adminSex
+                    this.sizeForm.adminGrade = datas.data[0].adminGrade
+                    this.mysdialogVisible = true
+                }
+            })
         }
     }
 }

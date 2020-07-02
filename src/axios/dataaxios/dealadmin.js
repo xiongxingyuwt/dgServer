@@ -91,12 +91,24 @@ function getlogin(options){
     })
 }
 
-// 
+// 获取登录信息 phoneNumber
+function getloginif(options){
+    return new Promise((resolve,reject)=>{
+        axiosRequest({
+            url: 'api/search?phoneNumber=' + options
+        }).then((res)=>{
+            resolve(res)
+        }).catch((err)=>{
+            reject(err)
+        })
+    })
+}
 module.exports = {
     getad,
     addadmin,
     changstatus,
     delet,
     login,
-    getlogin
+    getlogin,
+    getloginif
 }
